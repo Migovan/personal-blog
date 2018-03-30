@@ -1,7 +1,24 @@
 require('angular');
+require('angular-route');
+const myApp = angular.module('myApp', ['ngRoute']);
+// angular.module('myApp', [])
 
-angular.module('myApp', [])
-    .controller('firstCtrl', function ($scope) {
+    myApp.config(function ($routeProvider) {
+        $routeProvider
+            .when("/create",{
+                templateUrl: 'create.html',
+                controller: "createCtrl"
+            })
+            .when("/",{
+                templateUrl: 'view.html',
+                // controller: "createCtrl"
+            })
+            .otherwise({
+                template: '<h1>404 no such page</h1>'
+            })
+    });
+
+    myApp.controller('createCtrl', function ($scope) {
 
         $scope.dataObject = {
             head:{
@@ -49,6 +66,10 @@ angular.module('myApp', [])
 
                 reader.readAsDataURL(f);
             }
+            //
+            // if (span==''){
+            //     alert("Добавьте картинку.")
+            // }
         }
 
         document.getElementById('files').addEventListener('change',  $scope.addImage, false);

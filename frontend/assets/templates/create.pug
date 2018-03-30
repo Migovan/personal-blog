@@ -1,0 +1,18 @@
+div(ng-controller="createCtrl" class="firstCtrl")
+    form(enctype="multipart/form-data" method="post")
+        h3 Добавь свою картинку!
+        input(type="file" accept="image/jpeg" id="files" name="files[]")
+        output(id="list")
+    div
+        h3 Как называется твоя статья?
+        form
+            input(ng-model="dataObject.head.input" class="head")
+        div(ng-repeat="head in dataObject.head.element track by $index")
+            h2 {{head}}
+    div(class="window-paper")
+        h3 Напишу статью здесь!
+        textarea(ng-model="dataObject.paper.input")
+        form(class="create-paper" action="#!/" )
+                button(type="submit" ng-click="add()") создать статью
+        div(ng-repeat="paper in dataObject.paper.element track by $index")
+            p {{paper}}
