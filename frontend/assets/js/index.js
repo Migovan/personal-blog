@@ -53,6 +53,7 @@ angular.module('myApp', [])
 
         document.getElementById('files').addEventListener('change',  $scope.addImage, false);
 
+
     });
 
 
