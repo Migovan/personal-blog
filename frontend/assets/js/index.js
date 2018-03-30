@@ -2,32 +2,33 @@ require('angular');
 
 angular.module('myApp', [])
     .controller('firstCtrl', function ($scope) {
-        $scope.head = "";
-        $scope.paper = "";
-        $scope.arrayHead = [];
-        $scope.arrayPaper = [];
 
+        $scope.dataObject = {
+            head:{
+                input:"",
+                element:[]
+            },
+            paper:{
+                input:"",
+                element:[]
+            }
+        }
 
         $scope.add = () => {
 
-
-            if ($scope.paper == ""){
+            if ($scope.dataObject.head.input == ""){
                 alert("Введите текст.");
+            } else {
+                $scope.dataObject.head.element.push($scope.dataObject.head.input);
             }
-            else {
-                $scope.arrayPaper.push($scope.paper);
-            }
+            $scope.dataObject.head.input = "";
 
-            $scope.paper = "";
-
-            if ($scope.head == ""){
+            if ($scope.dataObject.paper.input == ""){
                 alert("Введите текст.");
+            } else {
+                $scope.dataObject.paper.element.push($scope.dataObject.paper.input);
             }
-            else {
-                $scope.arrayHead.push($scope.head);
-            }
-
-            $scope.head = "";
+            $scope.dataObject.paper.input = "";
         }
 
         $scope.addImage = (evt) => {
@@ -51,7 +52,6 @@ angular.module('myApp', [])
         }
 
         document.getElementById('files').addEventListener('change',  $scope.addImage, false);
-
 
     });
 
