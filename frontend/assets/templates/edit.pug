@@ -1,0 +1,14 @@
+div(ng-controller="editCtrl" class="box")
+    form(enctype="multipart/form-data" method="post")
+        h3 Добавь свою картинку!
+        input(type="file" accept="image/jpeg" id="files" name="files[]")
+        output(id="list")
+    div
+        h3 Как называется твоя статья?
+        form
+            input(ng-model="data[0]" class="head")
+    div(class="window-paper")
+        h3 Напишу статью здесь!
+        textarea(ng-model="data[0]")
+        form(class="create-paper" action="#!/view" )
+            button(class="button" type="submit" ng-click="add()") сохранить изменения

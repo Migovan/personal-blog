@@ -1,18 +1,19 @@
-div(ng-controller="createCtrl" class="firstCtrl")
+div(ng-controller="createCtrl" class="box")
     form(enctype="multipart/form-data" method="post")
         h3 Добавь свою картинку!
-        input(type="file" accept="image/jpeg" id="files" name="files[]")
-        output(id="list")
+        input(type="file"
+            accept="image/jpeg"
+            ng-model="dataObject.img"
+            fileread="dataObject.img"
+            ng-change="addImage()")
+        //input(type="text" ng-change="addImage()" ng-model="dataObject.img")
     div
         h3 Как называется твоя статья?
         form
-            input(ng-model="dataObject.head.input" class="head")
-        div(ng-repeat="head in dataObject.head.element track by $index")
-            h2 {{head}}
+            input(ng-model="dataObject.head" class="head")
     div(class="window-paper")
         h3 Напишу статью здесь!
-        textarea(ng-model="dataObject.paper.input")
+        textarea(ng-model="dataObject.paper")
         form(class="create-paper" action="#!/" )
-                button(type="submit" ng-click="add()") создать статью
-        div(ng-repeat="paper in dataObject.paper.element track by $index")
-            p {{paper}}
+                button(class="button" type="submit" ng-click="add()")
+                    = "{{ flag ? 'создать статью' : 'Сохранить изменения'}}"

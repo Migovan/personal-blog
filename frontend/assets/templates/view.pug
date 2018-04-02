@@ -1,5 +1,8 @@
-form(action="#!/create")
-    button(type="submit") редактировать
-//div(ng-controller="createCtrl" ng-repeat="head in dataObject.head.element track by $index")
-//    h2 {{head}}
-
+div(class="box__view" ng-controller='viewCtrl' ng-repeat="blog in data track by $index")
+    h2 {{blog.head}}
+    p {{blog.paper}}
+    div(class="buttons")
+        //form(class="form_view" action="#!/view/edit")
+        //    button(class="button" type="submit") читать
+        form(class="form_view" action="#!/view/edit")
+            button(class="button" type="submit") редактировать
