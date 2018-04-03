@@ -10,6 +10,7 @@ require('./factory');
 require('./create');
 require('./preview');
 require('./edit');
+require('./view');
 
 
 

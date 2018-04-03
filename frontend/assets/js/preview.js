@@ -1,4 +1,7 @@
-angular.module('myApp').controller('viewCtrl', function ($scope, mainFactory) {
+angular.module('myApp').controller('previewCtrl', function ($scope, mainFactory) {
     $scope.data = mainFactory;
-    console.log($scope.data)
+
+    $scope.deletePaper = (index) =>{
+        $scope.data.splice(index, 1)
+    }
 })

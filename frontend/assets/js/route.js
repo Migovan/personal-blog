@@ -7,13 +7,13 @@ angular.module('myApp', ['ngRoute']).config(function ($routeProvider) {
         })
         .when("/",{
             templateUrl: 'preview.html',
+            controller: "previewCtrl"
+        })
+        .when("/view/:Id",{
+            templateUrl: 'view.html',
             controller: "viewCtrl"
         })
-        .when("/view",{
-            templateUrl: 'view.html',
-            controller: "editCtrl"
-        })
-        .when("/view/edit",{
+        .when("/edit",{
             templateUrl: 'edit.html',
             controller: "editCtrl"
         })

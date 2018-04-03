@@ -6,7 +6,7 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory) 
     $scope.dataObject = {
         head: "",
         paper: "",
-        img: {}
+        img: []
     };
 
     $scope.add = () => {
