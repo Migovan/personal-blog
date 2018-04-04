@@ -1,3 +1,9 @@
 angular.module('myApp').factory('mainFactory', () => {
-    return []
+    dataLocal = [];
+    return dataLocal;
+
+    localStorage.setItem('local', dataLocal)
+
+    localStorage.getItem('local')
+
 });

@@ -1,4 +1,6 @@
 div(ng-controller="createCtrl" class="box")
+    //a(href="#!/" ng-class="style")
+    img(src="add.png" ng-click="add()")
     form(enctype="multipart/form-data" method="post")
         h3 Добавь свою картинку!
         input(type="file"
@@ -14,6 +16,6 @@ div(ng-controller="createCtrl" class="box")
     div(class="window-paper")
         h3 Напишу статью здесь!
         textarea(ng-model="dataObject.paper")
-        form(class="create-paper" action="#!/" )
-                button(class="button" type="submit" ng-click="add()")
-                    = "{{ flag ? 'создать статью' : 'Сохранить изменения'}}"
+        //form(class="create-paper" action="#!/" )
+        //        button(class="button" type="submit" ng-click="add()")
+        //            = "{{ flag ? 'создать статью' : 'Сохранить изменения'}}"

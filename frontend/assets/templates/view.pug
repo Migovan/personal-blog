@@ -1,7 +1,7 @@
 div(class="box" ng-controller='viewCtrl')
+    a(href="#!/edit/{{Id}}")
+        img(src="edit.png")
     h2 {{data.head}}
     p {{data.paper}}
-    a(href="#!/edit/{{Id}}")
-        div(class="button-link") редактировать
-form(class="button_create" action="#!/create")
-    button(type="submit") создать статью
+form(class="button_create" action="#!/")
+    button(type="submit") список статей

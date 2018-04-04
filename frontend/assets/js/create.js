@@ -7,18 +7,29 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory) 
         img: []
     };
 
+    // $scope.style = 'link-none'
+
     $scope.add = () => {
 
-        if ($scope.dataObject.head == ""){
-            alert("Введите заголовок.");
+        if ($scope.dataObject.head == "" || $scope.dataObject.paper == ""){
+            alert("Все поля обязательны к заполнению.");
+        } else {
+            mainFactory.push ($scope.dataObject)
+            var newUrl = "#!/";
+            history.pushState('', '', newUrl);
         }
 
         console.log($scope.dataObject.head)
 
-        if ($scope.dataObject.paper == ""){
-            alert("Напишите статью.");
-        }
-        mainFactory.push ($scope.dataObject)
+        // if ($scope.dataObject.paper == ""){
+        //     alert("Напишите статью.");
+        // } else {
+        //     mainFactory.push ($scope.dataObject)
+        //     var newUrl = "#!/";
+        //     history.pushState('', '', newUrl);
+        // }
+
+
         console.log($scope.dataObject.paper)
         console.log(mainFactory);
     }
