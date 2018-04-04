@@ -2,7 +2,7 @@ div(class="box" ng-controller='previewCtrl' ng-repeat="blog in data track by $in
     img(src="/delete.png" ng-click="deletePaper($index)")
     h2 {{blog.head}}
     a(href="#!/view/{{$index}}")
-        div(class="button-read") читать
+        div(class="button-link") читать
 form(class="button_create" action="#!/create")
     button(type="submit") создать статью
 

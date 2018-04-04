@@ -6,10 +6,9 @@ div(ng-controller="editCtrl" class="box")
     div
         h3 Как называется твоя статья?
         form
-            input(ng-model="data" class="head")
-        h1 {{data.head}}
+            input(ng-model="data.head" class="head")
     div(class="window-paper")
         h3 Напишу статью здесь!
-        textarea(ng-model="data")
-        form(class="create-paper" action="#!/view" )
-            button(class="button" type="submit" ng-click="add()") сохранить изменения
+        textarea(ng-model="data.paper")
+        a(href="#!/view/{{Id}}")
+            div(class="button-link") сохранить изменения
