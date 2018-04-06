@@ -3,12 +3,13 @@ div(ng-controller="createCtrl" class="box")
     img(src="add.png" ng-click="add()")
     form(enctype="multipart/form-data" method="post")
         h3 Добавь свою картинку!
-        input(type="file"
-            accept="image/jpeg"
-            ng-model="dataObject.img"
-            fileread="dataObject.img"
-            ng-change="addImage()")
+        //input(type="file"
+        //accept="image/jpeg"
+        //ng-model="dataObject.img"
+        //fileread="dataObject.img"
+        //ng-change="addImage()")
         //input(type="text" ng-change="addImage()" ng-model="dataObject.img")
+        input(type="file")
     div
         h3 Как называется твоя статья?
         form
@@ -16,6 +17,26 @@ div(ng-controller="createCtrl" class="box")
     div(class="window-paper")
         h3 Напишу статью здесь!
         textarea(ng-model="dataObject.paper")
-        //form(class="create-paper" action="#!/" )
-        //        button(class="button" type="submit" ng-click="add()")
-        //            = "{{ flag ? 'создать статью' : 'Сохранить изменения'}}"
+
+
+
+
+//div(ng-controller="createCtrl" class="box")
+//    img(ng-if="!isEditMode" src="add.png" ng-click="add()")
+//    span(ng-if="isEditMode" href="#!/view/{{Id}}")
+//        img(src="check-mark.png" ng-click="saveEditPaper()")
+//    form(enctype="multipart/form-data" method="post")
+//        h3 Добавь свою картинку!
+//        //input(type="file"
+//        //    accept="image/jpeg"
+//        //    ng-model="dataObject.img"
+//        //    fileread="dataObject.img"
+//        //    ng-change="addImage()")
+//    div
+//        h3 Как называется твоя статья?
+//        form
+//            input(ng-model="dataObject.head" class="head")
+//    div(class="window-paper")
+//        h3 Напишу статью здесь!
+//        textarea(ng-model="dataObject.paper")
+

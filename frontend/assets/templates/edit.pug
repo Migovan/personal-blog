@@ -1,6 +1,6 @@
 div(ng-controller="editCtrl" class="box")
     a(href="#!/view/{{Id}}")
-        img(src="check-mark.png")
+        img(src="check-mark.png" ng-click="saveEditPaper()")
     form(enctype="multipart/form-data" method="post")
         h3 Добавь свою картинку!
         input(type="file" accept="image/jpeg" id="files" name="files[]")
@@ -12,5 +12,3 @@ div(ng-controller="editCtrl" class="box")
     div(class="window-paper")
         h3 Напишу статью здесь!
         textarea(ng-model="data.paper")
-        //a(href="#!/view/{{Id}}")
-        //    div(class="button-link") сохранить изменения

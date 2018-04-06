@@ -1,9 +1,16 @@
-angular.module('myApp').factory('mainFactory', () => {
-    dataLocal = [];
-    return dataLocal;
+angular.module('myApp').factory('mainFactory', function() {
 
-    localStorage.setItem('local', dataLocal)
+    var returntData = {
+        arr: [],
+        get articleList() {
+            this.arr = JSON.parse(localStorage.getItem('key'));
+            return this.arr;
+        },
+        set articleList(newValue) {
+            localStorage.setItem('key', JSON.stringify(newValue));
+            this.arr = newValue;
+        }
+    };
 
-    localStorage.getItem('local')
-
+    return returntData
 });

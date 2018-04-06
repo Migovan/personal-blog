@@ -1,7 +1,13 @@
 angular.module('myApp').controller('editCtrl', function ($scope, mainFactory, $routeParams) {
-    $scope.data = mainFactory[$routeParams.Id];
+    $scope.data = mainFactory.articleList[$routeParams.Id];
     $scope.Id = $routeParams.Id
+    console.log($scope.data);
     $scope.saveEditPaper = () => {
-        mainFactory.splice($routeParams.Id, 1, $scope.da);
+        let articleList = mainFactory.articleList;
+        articleList.splice($routeParams.Id, 1, $scope.data);
+        mainFactory.articleList = articleList;
+
+        // let newUrl = "#!/view/{{Id}}";
+        // history.pushState('', '', newUrl);
     }
 })
