@@ -3,13 +3,10 @@ div(ng-controller="createCtrl" class="box")
     img(src="add.png" ng-click="add()")
     form(enctype="multipart/form-data" method="post")
         h3 Добавь свою картинку!
-        //input(type="file"
-        //accept="image/jpeg"
-        //ng-model="dataObject.img"
-        //fileread="dataObject.img"
-        //ng-change="addImage()")
-        //input(type="text" ng-change="addImage()" ng-model="dataObject.img")
-        input(type="file")
+        //input(type="file" accept="image/jpeg" ng-click="handleFiles()" id="input")
+        input(type="file" accept="image/jpeg" ng-model="dataObject.img")
+        //p(id="output")
+        p {{dataObject.img}}
     div
         h3 Как называется твоя статья?
         form
