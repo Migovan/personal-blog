@@ -1,10 +1,10 @@
 div(ng-controller="editCtrl" class="box")
     a(href="#!/view/{{Id}}")
-        img(src="check-mark.png" ng-click="saveEditPaper()")
+        img(src="check-mark.png" ng-click="saveEditPaper()" class="image-button")
     form(enctype="multipart/form-data" method="post")
         h3 Добавь свою картинку!
-        input(type="file" accept="image/jpeg" id="files" name="files[]")
-        output(id="list")
+        img(src="{{data.img}}" class="image-paper")
+        input(type="file"  ng-click="loadImage()")
     div
         h3 Как называется твоя статья?
         form

@@ -1,6 +1,7 @@
 div(class="box" ng-controller='viewCtrl')
     a(href="#!/edit/{{Id}}")
-        img(src="edit.png")
+        img(src="edit.png" class="image-button")
+    img(src="{{data.img}}" class="image-paper")
     h2 {{data.head}}
     p {{data.paper}}
 form(class="button_create" action="#!/")
