@@ -1,4 +1,4 @@
-angular.module('myApp').controller('previewCtrl', function ($scope, mainFactory) {
+angular.module('myApp').controller('previewCtrl', function ($scope, mainFactory, $routeParams) {
 
     $scope.data = mainFactory.articleList;
 

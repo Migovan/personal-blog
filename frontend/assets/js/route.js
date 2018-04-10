@@ -13,9 +13,9 @@ angular.module('myApp', ['ngRoute']).config(function ($routeProvider) {
             templateUrl: 'view.html',
             controller: "viewCtrl"
         })
-        .when("/edit/:Id",{
-            templateUrl: 'edit.html',
-            controller: "editCtrl"
+        .when("/edit/:editId",{
+            templateUrl: 'create.html',
+            controller: "createCtrl"
         })
         .otherwise({
             template: '<h1>404 no such page</h1>'

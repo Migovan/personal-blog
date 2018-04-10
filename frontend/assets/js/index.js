@@ -9,7 +9,6 @@ require('./factory');
 // views
 require('./create');
 require('./preview');
-require('./edit');
 require('./view');
 
 
