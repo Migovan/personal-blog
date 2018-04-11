@@ -13,7 +13,7 @@ angular.module('myApp', ['ngRoute']).config(function ($routeProvider) {
             templateUrl: 'view.html',
             controller: "viewCtrl"
         })
-        .when("/edit/:editId",{
+        .when("/edit/:Id",{
             templateUrl: 'create.html',
             controller: "createCtrl"
         })

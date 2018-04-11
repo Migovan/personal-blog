@@ -1,21 +1,22 @@
-div(ng-controller="createCtrl" class="box")
-    a(ng-if="editMode" href="#!/view/{{Id}}")
+div(class="box" ng-controller="createCtrl")
+    img(ng-if="flag" src="add.png" ng-click="add()" class="image-button")
+    a(ng-if="!flag" href="#!/view/{{Id}}")
         img(src="check-mark.png" ng-click="saveEditPaper()" class="image-button")
-    img(ng-if="!editMode" src="add.png" ng-click="add()" class="image-button")
     form(enctype="multipart/form-data" method="post")
-        h3 Добавь свою картинку!
+        h3(ng-if="flag") Добавьте картинку.
+        h3(ng-if="!flag") Вы находитесь в режиме редактирования.
         img(src="{{dataObject.img}}" class="image-paper")
-        //img(src="{{data.img}}" class="image-paper")
         input(type="file"  ng-click="loadImage()")
     div
-        h3 Как называется твоя статья?
+        h3(ng-if="flag") Как называется ваша статья?
+        h3(ng-if="!flag") Крутое название - залог успеха статьи.
         form
             input(ng-model="dataObject.head" class="head")
-            //input(ng-model="data.head" class="head")
     div(class="window-paper")
-        h3 Напишу статью здесь!
+        h3(ng-if="flag") Напишите статью здесь.
+        h3(ng-if="!flag") Согласитесь, всегда есть над чем порабротать.
         textarea(ng-model="dataObject.paper")
-        //textarea(ng-model="data.paper")
+
 
 
 
