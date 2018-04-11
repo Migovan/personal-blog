@@ -1,12 +1,13 @@
 div(ng-controller='previewCtrl')
-    div(class="box" ng-repeat="blog in data track by $index")
-        img(src="/delete1.png" ng-click="deletePaper($index)" class="image-button")
+    div(class="box-content" ng-repeat="blog in data track by $index")
+        img(class="icon" src="/delete1.png" ng-click="deletePaper($index)")
         a(href="#!/view/{{$index}}")
-            img(src="read.png" class="image-button")
-        img(src="{{blog.img}}" class="image-paper-preview")
-        h2 {{blog.head}}
-form(class="button_create" action="#!/create")
-    button(type="submit") создать статью
+            img(class="icon" src="read.png")
+        img(class="image-paper-preview" src="{{blog.img}}")
+        h2(class="head-preview") {{blog.head}}
+form(action="#!/create")
+    div(class="button_create")
+        button(type="submit") создать статью
 
 
 

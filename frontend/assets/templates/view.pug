@@ -1,8 +1,9 @@
-div(class="box" ng-controller='viewCtrl')
+div(class="box-content" ng-controller='viewCtrl')
     a(href="#!/edit/{{Id}}")
-        img(src="edit.png" class="image-button")
-    img(src="{{data.img}}" class="image-paper")
+        img(class="icon" src="edit.png")
+    img(class="image-paper" src="{{data.img}}")
     h2 {{data.head}}
     p {{data.paper}}
-form(class="button_create" action="#!/")
-    button(type="submit") список статей
+form(action="#!/")
+    div(class="button_create")
+        button(type="submit") список статей

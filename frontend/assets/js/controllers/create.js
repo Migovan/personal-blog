@@ -1,7 +1,7 @@
 angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$routeParams) {
 
     $scope.Id = $routeParams.Id;
-    $scope.flag = true;
+    $scope.editMode = !!$routeParams.Id;
 
     $scope.dataObject = {
         head: "",
@@ -11,7 +11,6 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
 
     if($scope.Id) {
         $scope.dataObject = mainFactory.articleList[$scope.Id];
-        $scope.flag = false;
     }
 
     $scope.saveEditPaper = () => {
@@ -21,24 +20,25 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
     }
 
     $scope.add = () => {
-
-        if ($scope.dataObject.head == "" || $scope.dataObject.paper == "" || $scope.dataObject.img == ""){
-            alert("Все поля обязательны к заполнению.");
-        } else {
+        if ($scope.dataObject.head || $scope.dataObject.paper || $scope.dataObject.img) {
+            let newUrl = "#!/";
             let articleList = mainFactory.articleList;
-            if (articleList == null) articleList = []
+
             articleList.push($scope.dataObject);
             mainFactory.articleList = articleList;
 
-            let newUrl = "#!/";
             history.pushState('', '', newUrl);
+        } else {
+            alert("Все поля обязательны к заполнению.");
         }
     }
 
     $scope.loadImage = (event) => {
+        let reader = new FileReader();
+        let file;
         if (event) {
-            let file = event.target.files[0];
-            let reader = new FileReader();
+            file = event.target.files[0];
+
             if (file) {
                 reader.readAsDataURL(file);
             }
@@ -46,10 +46,10 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
             reader.onloadend = () => {
                 $scope.$apply(() => {
                     $scope.dataObject.img = reader.result;
-            })
+                })
             }
         } else {
-            document.querySelector('input[type=file]').onchange= $scope.loadImage;
+            document.querySelector('input[type=file]').onchange = $scope.loadImage;
         }
     }
 

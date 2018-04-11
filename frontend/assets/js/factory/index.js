@@ -1,9 +1,9 @@
 angular.module('myApp').factory('mainFactory', function() {
-
-    var returntData = {
+    return  {
         arr: [],
         get articleList() {
             this.arr = JSON.parse(localStorage.getItem('key'));
+            if (this.arr === null) this.arr = [];
             return this.arr;
         },
         set articleList(newValue) {
@@ -11,7 +11,4 @@ angular.module('myApp').factory('mainFactory', function() {
             this.arr = newValue;
         }
     };
-
-    return returntData
-
 });

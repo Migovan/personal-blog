@@ -1,23 +1,18 @@
-div(class="box" ng-controller="createCtrl")
-    img(ng-if="flag" src="add.png" ng-click="add()" class="image-button")
-    a(ng-if="!flag" href="#!/view/{{Id}}")
-        img(src="check-mark.png" ng-click="saveEditPaper()" class="image-button")
-    form(enctype="multipart/form-data" method="post")
-        h3(ng-if="flag") Добавьте картинку.
-        h3(ng-if="!flag") Вы находитесь в режиме редактирования.
-        img(src="{{dataObject.img}}" class="image-paper")
-        input(type="file"  ng-click="loadImage()")
+div(class="box-content" ng-controller="createCtrl")
+    img(class="icon" ng-if="!editMode" src="add.png" ng-click="add()")
+    a(ng-if="editMode" href="#!/view/{{Id}}")
+        img(class="icon" src="check-mark.png" ng-click="saveEditPaper()")
+    h3(class="head-edit" ng-if="editMode") Вы находитесь в режиме редактирования.
+    img(class="image-paper" src="{{dataObject.img}}")
+    div(class="file-upload")
+        label
+            input(type="file"  ng-click="loadImage()")
+            span добавить картинку
     div
-        h3(ng-if="flag") Как называется ваша статья?
-        h3(ng-if="!flag") Крутое название - залог успеха статьи.
-        form
-            input(ng-model="dataObject.head" class="head")
+        h3(ng-if="!editMode") Как называется ваша статья?
+        h3(ng-if="editMode") Крутое название - залог успеха статьи.
+        input(class="head" ng-model="dataObject.head")
     div(class="window-paper")
-        h3(ng-if="flag") Напишите статью здесь.
-        h3(ng-if="!flag") Согласитесь, всегда есть над чем порабротать.
+        h3(ng-if="!editMode") Напишите статью здесь.
+        h3(ng-if="editMode") Согласитесь, всегда есть над чем порабротать.
         textarea(ng-model="dataObject.paper")
-
-
-
-
-

@@ -6,12 +6,5 @@ require('./route');
 // store
 require('./factory');
 
-// views
-require('./create');
-require('./preview');
-require('./view');
-
-
-
-
-
+//controllers
+require('./controllers');
