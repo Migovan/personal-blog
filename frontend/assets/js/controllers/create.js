@@ -19,7 +19,7 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
     if ($scope.Id) {
         $scope.dataObject = mainFactory.articleList[$scope.Id];
 
-        $scope.dataObject.dateEdit = ' ' + '-' + ' ' + 'изменено' + ' ' + moment().format('lll');
+        $scope.dataObject.dateEdit = moment().format('lll');
     }
 
     $scope.saveEditPaper = () => {
