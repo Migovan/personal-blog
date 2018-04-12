@@ -9,3 +9,4 @@ angular.module('myApp').controller('previewCtrl', function ($scope, mainFactory,
         $scope.data = articleList;
     }
 })
+

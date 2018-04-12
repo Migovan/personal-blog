@@ -5,6 +5,8 @@ div(ng-controller='previewCtrl')
             img(class="icon" src="read.png")
         img(class="image-paper-preview" src="{{blog.img}}")
         h2(class="head-preview") {{blog.head}}
+        span(class="date") {{blog.dateFirst}}
+        span(class="date") {{blog.dateEdit}}
 form(action="#!/create")
     div(class="button_create")
         button(type="submit") создать статью
