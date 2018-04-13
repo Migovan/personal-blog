@@ -1,7 +1,8 @@
 div(class="box-content" ng-controller="createCtrl")
     img(class="icon" ng-if="!editMode" src="add.png" ng-click="add()")
-    a(ng-if="editMode" href="#!/view/{{Id}}")
-        img(class="icon" src="check-mark.png" ng-click="saveEditPaper()")
+    //a(ng-if="editMode" href="#!/view/{{Id}}")
+    //    img(class="icon" src="check-mark.png" ng-click="saveEditPaper()")
+    img(class="icon" ng-if="editMode" src="check-mark.png" ng-click="saveEditPaper()")
     h3(class="head-edit" ng-if="editMode") Вы находитесь в режиме редактирования.
     img(class="image-paper" src="{{dataObject.img}}")
     div(class="file-upload")
