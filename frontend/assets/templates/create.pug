@@ -15,5 +15,9 @@ div(class="box-content" ng-controller="createCtrl")
         input(class="head" ng-model="dataObject.head")
     div(class="window-paper")
         h3(ng-if="!editMode") Напишите статью здесь.
+        div
+            img(src="font-size.png")
+            input(type="range" ng-model="dataObject.value" min="10" max="40")
+            span {{dataObject.value}}px
         h3(ng-if="editMode") Согласитесь, всегда есть над чем порабротать.
-        textarea(ng-model="dataObject.paper")
+        textarea(class="textarea" ng-model="dataObject.paper")

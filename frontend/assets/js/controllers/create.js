@@ -10,8 +10,21 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
         paper: "",
         img: "",
         dateFirst: "",
-        dateEdit: ""
+        dateEdit: "",
+        value: 15
     };
+
+    $scope.$watch( function () {
+
+        if ($scope.dataObject.paper) {
+
+            $scope.tagTextarea = document.getElementsByClassName('textarea')[0];
+
+            $scope.tagTextarea.style.fontSize = $scope.dataObject.value + "px";
+
+            }
+        }
+    );
 
     $scope.dataObject.dateEdit = "";
     moment.locale('ru');
@@ -89,7 +102,7 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
             document.querySelector('input[type=file]').onchange = $scope.loadImage;
         }
     }
-
+    console.log($scope.dataObject);
 });
 
 
