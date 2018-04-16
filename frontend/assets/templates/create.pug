@@ -20,4 +20,4 @@ div(class="box-content" ng-controller="createCtrl")
             input(type="range" ng-model="dataObject.value" min="10" max="40")
             span {{dataObject.value}}px
         h3(ng-if="editMode") Согласитесь, всегда есть над чем порабротать.
-        textarea(class="textarea" ng-model="dataObject.paper")
+        textarea(ng-model="dataObject.paper" style="font-size: {{dataObject.value }}px")

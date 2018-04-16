@@ -12,10 +12,23 @@ body
   padding 20px
   border-radius 22px
   background-color #fff
+  box-shadow 0 0 17px rgba(122, 107, 107, 0.5)
   a
     text-decoration none
   h2
     margin-bottom 3px 0
+
+.box-content-preview
+  width 40%
+  margin 50px auto
+  padding 20px
+  border-radius 22px
+  background-color #fff
+  box-shadow 0 0 17px rgba(122, 107, 107, 0.5)
+  transition: all 0.25s ease-out
+  &:hover
+    transform: scale(1.015)
+    box-shadow: 0 5px 20px rgba(122, 107, 107, 0.5)
 
 
 .icon
@@ -47,7 +60,7 @@ body
   font-size 14px
 
 .button_create
-  width 17%
+  width 16%
   margin 50px auto
   button
     width 300px
@@ -80,3 +93,12 @@ body
   margin 10px 0px
   color #939393
 
+.filter
+  width: 16%;
+  margin: 30px auto 0
+  input
+    width: 300px;
+    border-radius: 20px;
+    border: inherit;
+    height: 21px;
+    padding: 4px;

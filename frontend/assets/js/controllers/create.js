@@ -14,17 +14,19 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
         value: 15
     };
 
-    $scope.$watch( function () {
+    // $scope.$watch( function () {
+    //
+    //     if ($scope.dataObject.paper) {
+    //
+    //         $scope.tagTextarea = document.getElementsByClassName('textarea')[0];
+    //
+    //         $scope.tagTextarea.style.fontSize = $scope.dataObject.value + "px";
+    //
+    //         }
+    //     }
+    // );
 
-        if ($scope.dataObject.paper) {
 
-            $scope.tagTextarea = document.getElementsByClassName('textarea')[0];
-
-            $scope.tagTextarea.style.fontSize = $scope.dataObject.value + "px";
-
-            }
-        }
-    );
 
     $scope.dataObject.dateEdit = "";
     moment.locale('ru');
@@ -69,8 +71,6 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
 
             let newUrl = "#!/";
             let articleList = mainFactory.articleList;
-
-            console.log(newUrl);
 ;
             articleList.push($scope.dataObject);
             mainFactory.articleList = articleList;
@@ -102,7 +102,6 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
             document.querySelector('input[type=file]').onchange = $scope.loadImage;
         }
     }
-    console.log($scope.dataObject);
 });
 
 
