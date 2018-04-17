@@ -1,5 +1,5 @@
 div(ng-controller='previewCtrl')
-    div(class="filter")
+    div(class="filter" ng-show="data.length >= 3 || filter" )
         input(type="text" placeholder="filter..." ng-model="filter")
     div(class="box-content-preview" ng-repeat="blog in data track by $index")
         img(class="icon" src="/delete1.png" ng-click="deletePaper($index)")
