@@ -4,6 +4,9 @@ div(class="box-content" ng-controller='viewCtrl')
     img(class="image-paper" src="{{data.img}}")
     h2 {{data.head}}
     p(class="paragraph") {{data.paper}}
+    div(class="arrow" )
+        img(src="left-arrow.png" ng-click="sliderMinus()" ng-if="!flagMinus")
+        img(src="right-arrow.png" ng-click="sliderPlus()" ng-if="!flagPlus")
 form(action="#!/")
     div(class="button_create")
         button(type="submit") список статей
