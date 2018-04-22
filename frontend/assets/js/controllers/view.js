@@ -26,14 +26,15 @@ angular.module('myApp').controller('viewCtrl', function ($scope, mainFactory, $r
         } 
     }
 
-    if ($scope.Id == mainFactory.articleList.length-1) {
+    if ($scope.Id == mainFactory.articleList.length-1 && mainFactory.articleList.length !== 1) {
         $scope.flag = true;
     }
     if (Number($scope.Id) !== mainFactory.articleList.length-1 && $scope.Id !== '0') {
         $scope.flag1 = true;
         console.log("Id",$scope.Id, "mainFactory.articleList.length-1", mainFactory.articleList.length-1);
     }
-    if ($scope.Id == '0') {
+    if ($scope.Id == '0' && mainFactory.articleList.length !== 1) {
         $scope.flag2 = true;
     }
+    console.log(mainFactory.articleList.length);
 })
