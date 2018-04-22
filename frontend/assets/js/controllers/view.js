@@ -5,35 +5,35 @@ angular.module('myApp').controller('viewCtrl', function ($scope, mainFactory, $r
     $scope.tagParagraph = document.getElementsByClassName('paragraph')[0];
     $scope.tagParagraph.style.fontSize = $scope.data.value + "px";
 
-    let n = $routeParams.Id;
-
     $scope.sliderPlus = () => {
 
-        let newUrl = "#!/view/" + n++;
-        console.log(mainFactory.articleList.length);
+        let newUrl;
 
-        if (mainFactory.articleList.length > n) {
+        if (mainFactory.articleList.length-1 > $scope.Id) {
 
-            let newUrl = "#!/view/" + n++;
+            newUrl = "#!/view/" + ++$scope.Id;
             history.pushState('', '', newUrl);
-        }
-        if (mainFactory.articleList.length <= n) {
-            $scope.flagPlus = true;
-        }
-
-        console.log(newUrl);
+        };
     }
 
     $scope.sliderMinus = () => {
 
-        let newUrl = "#!/view/" + n--;
+        let newUrl;
 
-        if (n >= 0 ) {
-            let newUrl = "#!/view/" + n--;
+        if ($scope.Id > 0 ) {
+            newUrl = "#!/view/" + --$scope.Id;
             history.pushState('', '', newUrl);
-        } else {
-            $scope.flagMinus = true;
-        }
+        } 
     }
 
+    if ($scope.Id == mainFactory.articleList.length-1) {
+        $scope.flag = true;
+    }
+    if (Number($scope.Id) !== mainFactory.articleList.length-1 && $scope.Id !== '0') {
+        $scope.flag1 = true;
+        console.log("Id",$scope.Id, "mainFactory.articleList.length-1", mainFactory.articleList.length-1);
+    }
+    if ($scope.Id == '0') {
+        $scope.flag2 = true;
+    }
 })
