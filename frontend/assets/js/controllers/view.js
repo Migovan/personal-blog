@@ -9,30 +9,28 @@ angular.module('myApp').controller('viewCtrl', function ($scope, mainFactory, $r
 
     $scope.sliderPlus = () => {
 
-        let newUrl = "#!/view/" + n++;
-        console.log(mainFactory.articleList.length);
+        let newUrl;
 
-        if (mainFactory.articleList.length > n) {
-
-            let newUrl = "#!/view/" + n++;
+        if (mainFactory.articleList.length-1 > n) {
+            newUrl = "#!/view/" + ++n;
             history.pushState('', '', newUrl);
+        } else if (mainFactory.articleList.length-1 == n) {
+            $scope.flag = true;
         }
-        if (mainFactory.articleList.length <= n) {
-            $scope.flagPlus = true;
-        }
+        console.log('mainFactory.articleList.length-1', mainFactory.articleList.length-1);
+        console.log('n', n);
 
-        console.log(newUrl);
     }
 
     $scope.sliderMinus = () => {
 
-        let newUrl = "#!/view/" + n--;
+        let newUrl;
 
-        if (n >= 0 ) {
-            let newUrl = "#!/view/" + n--;
+        if (n >= 1 ) {
+            newUrl = "#!/view/" + --n;
             history.pushState('', '', newUrl);
-        } else {
-            $scope.flagMinus = true;
+        } else if (n == 0) {
+            $scope.flag1 = true;
         }
     }
 
