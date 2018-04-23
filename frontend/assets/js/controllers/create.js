@@ -53,7 +53,7 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
         let articleList = mainFactory.articleList;
         let newUrl = "#!/view/" + $scope.Id;
 
-        if ($scope.dataObject.head && $scope.dataObject.paper && $scope.dataObject.img) {
+        if ($scope.dataObject.head && $scope.dataObject.paper) {
             articleList.splice($scope.Id, 1, $scope.dataObject);
             mainFactory.articleList = articleList;
 
@@ -67,7 +67,7 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
 
     $scope.add = () => {
 
-        if ($scope.dataObject.head && $scope.dataObject.paper && $scope.dataObject.img) {
+        if ($scope.dataObject.head && $scope.dataObject.paper) {
 
             let newUrl = "#!/";
             let articleList = mainFactory.articleList;
