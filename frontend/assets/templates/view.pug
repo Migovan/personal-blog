@@ -1,4 +1,4 @@
-div(class="box-content" ng-controller='viewCtrl')
+div(ng-class='classForBlur' class="box-content" ng-controller='viewCtrl')
     a(href="#!/edit/{{Id}}")
         img(class="icon" src="edit.png")
     img(class="image-paper" src="{{data.img}}")
@@ -13,4 +13,4 @@ div(class="box-content" ng-controller='viewCtrl')
         img(class="active-arrow" src="right-arrow.png" ng-click="sliderPlus()" ng-if ="flag2")
 form(action="#!/")
     div(class="button_create")
-        button(type="submit") список статей
+        button(type="submit") список <статей></статей>
