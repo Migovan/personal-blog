@@ -9,38 +9,27 @@ angular.module('myApp').controller('viewCtrl', function ($scope, mainFactory, $r
     $scope.sliderPlus = () => {
 
         let newUrl;
-
         $scope.classForBlur = 'blur';
-
-        // if (mainFactory.articleList.length-1 > $scope.Id) {
-        //     setTimeout(function () {
-        //         newUrl = "#!/view/" + ++$scope.Id;
-        //         history.pushState('', '', newUrl);
-        //     }, 250);
-        // };
-
-            // let a = setTimeout(function () {
-            //     newUrl = "#!/view/" + ++$scope.Id;
-            //     history.pushState('', '', newUrl);
-            //     clearTimeout(a);
-            // }, 250);
 
             $timeout(function () {
                 newUrl = "#!/view/" + ++$scope.Id;
                 history.pushState('', '', newUrl);
                 clearTimeout(a);
-            }, 250);
+            }, 150);
 
     }
 
     $scope.sliderMinus = () => {
 
         let newUrl;
+        $scope.classForBlur = 'blur';
 
-        if ($scope.Id > 0 ) {
+        $timeout(function () {
             newUrl = "#!/view/" + --$scope.Id;
             history.pushState('', '', newUrl);
-        }
+            clearTimeout(a);
+        }, 150);
+
     }
 
     if ($scope.Id == mainFactory.articleList.length-1 && mainFactory.articleList.length !== 1) {
