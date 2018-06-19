@@ -8,10 +8,8 @@ angular.module('myApp').controller('previewCtrl', function ($scope, mainFactory,
         articleList.splice(index, 1);
         mainFactory.articleList = articleList;
         $scope.data = articleList;
-        $scope.$apply();
+        // $scope.$apply();
     }
-
-
 
     $scope.$watch('filter', function () {
 

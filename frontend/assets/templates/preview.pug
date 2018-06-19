@@ -4,11 +4,11 @@ div(ng-controller='previewCtrl')
     div(class="box-content-preview" ng-repeat="blog in data track by $index")
         img(class="icon" src="/delete1.png" ng-click="deletePaper($index)")
         a(href="#!/view/{{$index}}")
-            img(class="icon" src="read.png")
-        img(class="image-paper-preview" src="{{blog.img}}")
-        h2(class="head-preview") {{blog.head}}
-        span(class="date") {{blog.dateFirst}}
-        span(class="date" ng-if='blog.dateEdit')  - изменено {{blog.dateEdit}}
+            div
+                img(class="image-paper-preview" src="{{blog.img}}")
+                h2(class="head-preview") {{blog.head}}
+                span(class="date") {{blog.dateFirst}}
+                span(class="date" ng-if='blog.dateEdit')  - изменено {{blog.dateEdit}}
 form(action="#!/create")
     div(class="button_create")
         button(type="submit") создать статью

@@ -102,6 +102,13 @@ angular.module('myApp').controller('createCtrl', function ($scope, mainFactory,$
             document.querySelector('input[type=file]').onchange = $scope.loadImage;
         }
     }
+
+    $scope.deleteImage = () => {
+
+        $scope.dataObject.img = '';
+
+    }
+
 });
 
 

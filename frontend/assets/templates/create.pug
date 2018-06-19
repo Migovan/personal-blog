@@ -1,14 +1,17 @@
 div(class="box-content" ng-controller="createCtrl")
     img(class="icon" ng-if="!editMode" src="add.png" ng-click="add()")
-    //a(ng-if="editMode" href="#!/view/{{Id}}")
-    //    img(class="icon" src="check-mark.png" ng-click="saveEditPaper()")
     img(class="icon" ng-if="editMode" src="check-mark.png" ng-click="saveEditPaper()")
     h3(class="head-edit" ng-if="editMode") Вы находитесь в режиме редактирования.
     img(class="image-paper" src="{{dataObject.img}}")
-    div(class="file-upload")
-        label
-            input(type="file"  ng-click="loadImage()")
-            span добавить картинку
+    div(class="buttons-image")
+        div(class="file-upload")
+            label
+                input(type="file"  ng-click="loadImage()")
+                span(ng-if="!dataObject.img") добавить картинку
+                span(ng-if="dataObject.img") изменить картинку
+        div(class="file-upload" ng-if="dataObject.img")
+            label(ng-click="deleteImage()")
+                span удалить
     div
         h3(ng-if="!editMode") Как называется ваша статья?
         h3(ng-if="editMode") Крутое название - залог успеха статьи.
@@ -21,3 +24,6 @@ div(class="box-content" ng-controller="createCtrl")
             span {{dataObject.value}}px
         h3(ng-if="editMode") Согласитесь, всегда есть над чем порабротать.
         textarea(ng-model="dataObject.paper" style="font-size: {{dataObject.value }}px")
+form(action="#!/")
+    div(class="button_create")
+        button(type="submit") вернуться назад
